@@ -52,7 +52,7 @@ async def start_command(event):
     buttons = [
         [Button.inline("SET THUMB", data="set"),
          Button.inline("REM THUMB", data="rem")],
-        [Button.url("Join Channel", url="")]
+        [Button.url("Join Channel", url="https://t.me/dev_gagan")]
     ]
 
     # Sending photo with caption and buttons
