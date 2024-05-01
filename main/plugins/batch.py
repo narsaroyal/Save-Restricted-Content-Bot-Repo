@@ -122,7 +122,7 @@ async def run_batch(userbot, client, sender, countdown, link):
             await get_bulk_msg(userbot, client, sender, link, integer)
             protection = await client.send_message(sender, f"Sleeping for `{timer}` seconds to avoid Floodwaits and Protect account!")
             await countdown.edit(count_down, 
-                                 buttons=[[Button.url("Join Channel", url="")]])
+                                 buttons=[[Button.url("Join Channel", url="https://t.me/dev_gagan")]])
             await asyncio.sleep(timer)
             await protection.delete()
         except IndexError as ie:
@@ -145,7 +145,7 @@ async def run_batch(userbot, client, sender, countdown, link):
                     #print(e)
                     logger.info(e)
                     if countdown.text != count_down:
-                        await countdown.edit(count_down, buttons=[[Button.url("Join Channel", url="")]])
+                        await countdown.edit(count_down, buttons=[[Button.url("Join Channel", url="https://t.me/dev_gagan")]])
         except Exception as e:
             #print(e)
             logger.info(e)
@@ -166,7 +166,7 @@ async def start_command(event):
     buttons = [
         [Button.inline("Cancel", data="cancel"),
          Button.inline("Cancel", data="cancel")],
-        [Button.url("Join Channel", url="")]
+        [Button.url("Join Channel", url="https://t.me/dev_gagan")]
     ]
 
     # Sending photo with caption and buttons
