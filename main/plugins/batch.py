@@ -1,4 +1,4 @@
-#Join t.me/dev_gagan
+#Join t.me/royalns
 
 import logging
 import time, os, asyncio
@@ -35,7 +35,7 @@ ids = []
 async def _batch(event):
     s = False
     if f'{event.sender_id}' in batch:
-        return await event.reply("You've already started one batch, wait for it to complete you dumbfuck owner!")
+        return await event.reply("You've already started one batch, wait for it to complete !")
     async with gagan.conversation(event.chat_id) as conv: 
         if not s:
             await conv.send_message(f"Send me the message link you want to start saving from, as a reply to this message.", buttons=Button.force_reply())
@@ -70,7 +70,7 @@ async def _batch(event):
                 return
             batch.append(f'{event.sender_id}')
             cd = await conv.send_message("**Batch process ongoing...**\n\nProcess completed: ", 
-                                    buttons=[[Button.url("Join Channel", url="http://t.me/dev_gagan")]])
+                                    buttons=[[Button.url("Join Channel", url="http://t.me/royalns")]])
             co = await run_batch(userbot, Bot, event.sender_id, cd, _link) 
             try: 
                 if co == -2:
@@ -94,11 +94,11 @@ async def run_batch(userbot, client, sender, countdown, link):
         if i < 250:
             timer = 1
         elif i < 1000 and i > 100:
-            timer = 2
+            timer = 1
         elif i < 10000 and i > 1000:
-            timer = 3
+            timer = 2
         elif i < 50000 and i > 10000:
-            timer = 5
+            timer = 3
         elif i < 100000 and i > 50000:
             timer = 6
         elif i < 200000 and i > 100000:
@@ -122,7 +122,7 @@ async def run_batch(userbot, client, sender, countdown, link):
             await get_bulk_msg(userbot, client, sender, link, integer)
             protection = await client.send_message(sender, f"Sleeping for `{timer}` seconds to avoid Floodwaits and Protect account!")
             await countdown.edit(count_down, 
-                                 buttons=[[Button.url("Join Channel", url="https://t.me/dev_gagan")]])
+                                 buttons=[[Button.url("Join Channel", url="https://t.me/royalns")]])
             await asyncio.sleep(timer)
             await protection.delete()
         except IndexError as ie:
@@ -145,20 +145,20 @@ async def run_batch(userbot, client, sender, countdown, link):
                     #print(e)
                     logger.info(e)
                     if countdown.text != count_down:
-                        await countdown.edit(count_down, buttons=[[Button.url("Join Channel", url="https://t.me/dev_gagan")]])
+                        await countdown.edit(count_down, buttons=[[Button.url("Join Channel", url="https://t.me/royalns")]])
         except Exception as e:
             #print(e)
             logger.info(e)
             await client.send_message(sender, f"An error occurred during cloning, batch will continue.\n\n**Error:** {str(e)}")
             if countdown.text != count_down:
-                await countdown.edit(count_down, buttons=[[Button.url("Join Channel", url="https://t.me/dev_gagan")]])
+                await countdown.edit(count_down, buttons=[[Button.url("Join Channel", url="https://t.me/royalns")]])
         n = i + 1
         if n == len(ids):
             return -2
 
 C = "/cancel"
 START_PIC = "https://graph.org/file/41b83fba0c617adafee20.jpg"
-TEXT = "👋 Hi, This is 'Paid Restricted Content Saver' bot Made with ❤️ by __**Team **__."
+TEXT = "👋 Hi, This is 'Paid Restricted Content Saver' ."
 
 @gagan.on(events.NewMessage(pattern=f"^{C}"))
 async def start_command(event):
@@ -166,7 +166,7 @@ async def start_command(event):
     buttons = [
         [Button.inline("Cancel", data="cancel"),
          Button.inline("Cancel", data="cancel")],
-        [Button.url("Join Channel", url="https://t.me/dev_gagan")]
+        [Button.url("Join Channel", url="https://t.me/royalns")]
     ]
 
     # Sending photo with caption and buttons
